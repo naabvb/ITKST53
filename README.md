@@ -1,2 +1,2 @@
 # ITKST53
-ITKST53 Labs
+ITKST53 Ohjelmistoturvallisuus kurssin labrat
