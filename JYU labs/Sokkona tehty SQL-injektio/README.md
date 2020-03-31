@@ -43,7 +43,7 @@ varmentaa tämän, jonka tein komennolla:
 Tämä siis saa sqlite_master taulusta listan tauluja, joiden määrän 
 laskemme count() funktiolla. Taulujen nimien testaamiseen käytin yhä 
 True/false arvailua ja tein sitä varten yksinkertaisen Python skriptin, joka 
-löytyy täältä -> TODO
+löytyy täältä -> https://github.com/naabvb/ITKST53/blob/master/JYU%20labs/Sokkona%20tehty%20SQL-injektio/tables.py
 
 Skripti selvittää ensin taulun nimen pituuden komennolla:
 `
@@ -91,7 +91,7 @@ ja nimille
 `
 ' or (SELECT substr(sql,kohta_nimessa,1) FROM sqlite_master WHERE type!='meta' and sql NOT NULL and name NOT like 'sqlite_%' and name='users_18' limit 1 offset 0) = 'merkki' --
 `
-Skripti -> TODO
+Skripti -> https://github.com/naabvb/ITKST53/blob/master/JYU%20labs/Sokkona%20tehty%20SQL-injektio/columns.py
 
 Tämä ei itse asiassa toiminut aivan kuten ajattelin, sillä ulos tulostui: 
 CREATE TABLE users_18 (uid TEXT, pass Text, PRIMARY KEY (uid))
@@ -109,5 +109,5 @@ ja sitten itse uid
 T4 perusteella saamme 5 käyttäjää, yksi per offset. Löytyneet käyttäjät siis:
 11111, abramov, accounting, admin ja postmaster
 
-Skripti -> 
+Skripti -> https://github.com/naabvb/ITKST53/blob/master/JYU%20labs/Sokkona%20tehty%20SQL-injektio/users.py
 
